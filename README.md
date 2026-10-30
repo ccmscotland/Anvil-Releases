@@ -10,8 +10,8 @@ Anvil is a high-performance, keyboard-first code and text editor built specifica
 
 ## Download Latest APK
 
-- **[Download Anvil v0.70.3 Release APK (Recommended)](https://github.com/ccmscotland/Anvil-Releases/releases/latest/download/Anvil-release.apk)** (14.5 MB, signed with RSA-4096 key, optimized)
-- **[Anvil v0.70.3 Debug APK](https://github.com/ccmscotland/Anvil-Releases/releases/latest/download/Anvil-debug.apk)** (18.6 MB, debuggable)
+- **[Download Anvil v1.0.0 Release APK (Recommended)](https://github.com/ccmscotland/Anvil-Releases/releases/latest/download/Anvil-release.apk)** (14.5 MB, signed with RSA-4096 key, optimized)
+- **[Anvil v1.0.0 Debug APK](https://github.com/ccmscotland/Anvil-Releases/releases/latest/download/Anvil-debug.apk)** (18.6 MB, debuggable)
 
 All versions and historical release notes are available on the [Releases Page](https://github.com/ccmscotland/Anvil-Releases/releases).
 
@@ -63,6 +63,7 @@ All versions and historical release notes are available on the [Releases Page](h
 
 | Version | Release Date | Key Updates | Download |
 |:---:|:---:|:---|:---:|
+| v1.0.0 | October 2026 | Official 1.0.0 General Availability release. Full desktop shell, Googlebook OS Rambler Gemini voice dictation, RSA 4096-bit release signing, multi-window support. | [Release APK](https://github.com/ccmscotland/Anvil-Releases/releases/download/v1.0.0/Anvil-release.apk) |
 | v0.70.3 | October 2026 | Googlebook OS Rambler Gemini voice dictation, IME selection synchronization, hardware dictation key passthrough, Save As integration. | [Release APK](https://github.com/ccmscotland/Anvil-Releases/releases/download/v0.70.3/Anvil-release.apk) |
 
 ---
