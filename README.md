@@ -10,7 +10,10 @@
 
 ## 📥 Download Latest APK
 
-👉 **[Download Anvil v0.70.3 APK](https://github.com/ccmscotland/Anvil-Releases/releases/latest/download/Anvil-debug.apk)** (Direct APK download)
+👉 **[Download Anvil v0.70.3 Release APK (Recommended)](https://github.com/ccmscotland/Anvil-Releases/releases/latest/download/Anvil-release.apk)** (14.5 MB, signed with RSA-4096 key, optimized)
+
+Also available:
+- **[Anvil v0.70.3 Debug APK](https://github.com/ccmscotland/Anvil-Releases/releases/latest/download/Anvil-debug.apk)** (18.6 MB, debuggable)
 
 All versions and historical release notes are available on the **[Releases Page](https://github.com/ccmscotland/Anvil-Releases/releases)**.
 
