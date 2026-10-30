@@ -43,6 +43,14 @@ All versions and historical release notes are available on the [Releases Page](h
 
 ---
 
+## User Guide and Instructions
+
+A complete, in-depth guide covering keyboard navigation, split panes, Googlebook OS voice dictation, shortcut cheatsheets, cloud/remote storage, and troubleshooting is available:
+
+- **[Full Anvil User Guide and Instructions (USER-GUIDE.md)](USER-GUIDE.md)**
+
+---
+
 ## How to Install
 
 ### On Android and Android Tablets
