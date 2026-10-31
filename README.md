@@ -10,7 +10,7 @@ Anvil is a high-performance, keyboard-first code and text editor built specifica
 
 ## Download Latest APK
 
-- **[Download Anvil v1.0.0 Release APK](https://github.com/ccmscotland/Anvil-Releases/releases/latest/download/Anvil-release.apk)** (14.5 MB, signed with RSA-4096 key, optimized)
+- **[Download Anvil v1.0.1 Release APK (Latest)](https://github.com/ccmscotland/Anvil-Releases/releases/latest/download/Anvil-release.apk)** (14.5 MB, signed with RSA-4096 key, optimized)
 
 All versions and historical release notes are available on the [Releases Page](https://github.com/ccmscotland/Anvil-Releases/releases).
 
@@ -70,6 +70,7 @@ A complete, in-depth guide covering keyboard navigation, split panes, Googlebook
 
 | Version | Release Date | Key Updates | Download |
 |:---:|:---:|:---|:---:|
+| v1.0.1 | October 2026 | Streamlined location picker (hiding unused/experimental remote providers), bundled in-app quick-start user guide template. | [Release APK](https://github.com/ccmscotland/Anvil-Releases/releases/download/v1.0.1/Anvil-release.apk) |
 | v1.0.0 | October 2026 | Official 1.0.0 General Availability release. Full desktop shell, Googlebook OS Rambler Gemini voice dictation, RSA 4096-bit release signing, multi-window support. | [Release APK](https://github.com/ccmscotland/Anvil-Releases/releases/download/v1.0.0/Anvil-release.apk) |
 | v0.70.3 | October 2026 | Googlebook OS Rambler Gemini voice dictation, IME selection synchronization, hardware dictation key passthrough, Save As integration. | [Release APK](https://github.com/ccmscotland/Anvil-Releases/releases/download/v0.70.3/Anvil-release.apk) |
 
