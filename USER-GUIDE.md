@@ -6,6 +6,7 @@ Welcome to **Anvil**, a keyboard-first, high-performance text and code editor fo
 
 ## Table of Contents
 
+- [Glossary](#glossary)
 1. [Introduction and Philosophy](#1-introduction-and-philosophy)
 2. [System Requirements and Installation](#2-system-requirements-and-installation)
 3. [Adaptive Interfaces and Form Factors](#3-adaptive-interfaces-and-form-factors)
@@ -25,6 +26,27 @@ Welcome to **Anvil**, a keyboard-first, high-performance text and code editor fo
 17. [Model Context Protocol (MCP) Integration](#17-model-context-protocol-mcp-integration)
 18. [Comprehensive Keyboard Shortcuts Reference](#18-comprehensive-keyboard-shortcuts-reference)
 19. [Troubleshooting and FAQ](#19-troubleshooting-and-faq)
+
+---
+
+## Glossary
+
+Anvil uses these words the same way everywhere: in menus, dialogs, messages and this guide.
+
+**Places**
+- **Location**: any place the file drawer can browse. Add them with **Add a location** and manage them under **Locations**.
+- **Location kinds**: **Device folder**, **Network share (SMB)**, **FTP server**, **SFTP server**, **WebDAV**, **GitHub repository**, **Google Drive** and **Root filesystem**. Where space is short, such as the status bar or the Recent list, the kind is shortened to *This device*, *SMB*, *FTP* or *FTPS*, *SFTP*, *WebDAV*, *GitHub*, *Google Drive* or *Root*.
+- **Document**: a file open in a tab. **Open documents** are the documents in your tabs.
+
+**Verbs**
+- **Disconnect**: close the connection to a server. Its settings and saved sign-in details are kept.
+- **Remove**: take something off a list without destroying it. **Remove** on a location takes it off Locations and deletes any saved password, key or token from this device; files on the server or device are not touched. **Remove key** and **Remove host key** delete a saved key from this device.
+- **Sign out**: Google Drive only. It ends Anvil's access to your Google account.
+- **Delete**: destroy something: a file, folder, workspace, snippet, template or local history version.
+
+**Writing style**
+- Buttons and menu items use sentence case (**Save as**, **Try again**, **Clear recent files**). Only small section labels, such as LOCATIONS, are in capitals.
+- Messages name the thing first and use the past tense: "notes.md saved", "Template “Report” deleted", "nas/share disconnected".
 
 ---
 
@@ -115,8 +137,8 @@ Anvil monitors display metrics and system UI modes to present the optimal layout
 - **Save All**: Select `File -> Save all` to persist all modified tabs at once.
 
 ### Auto-Save Modes
-Configure auto-save behavior in `Settings -> Saving`:
-- **Off** (default): Saves only on explicit user command.
+Configure auto-save behavior in `Settings -> Files & saving`:
+- **Off** (default): Saves only when you ask. GitHub files and files changed by other apps are never saved automatically.
 - **After a pause**: Automatically saves 2 seconds after typing ceases.
 - **On leaving Anvil**: Automatically writes modified buffers when switching to another application.
 
@@ -139,7 +161,7 @@ Anvil automatically takes snapshots of your documents during active editing sess
   - Direct Tab Jump: **`Ctrl+1`** through **`Ctrl+9`** (jumps directly to tabs 1 through 9)
 - **Closing Tabs**: Press **`Ctrl+W`** (or middle-click the tab). Anvil prompts to save if the buffer has unsaved edits.
 - **Reopen Closed Tab**: Press **`Ctrl+Shift+T`** to restore the most recently closed buffer.
-- **Reordering Tabs**: Drag tabs horizontally, or press **`Ctrl+Shift+Left`** / **`Ctrl+Shift+Right`**.
+- **Reordering Tabs**: Drag tabs horizontally with a mouse or touchpad, or press **`Ctrl+Shift+PageUp`** / **`Ctrl+Shift+PageDown`**. (`Ctrl+Shift+Left` / `Right` select word by word in the editor.)
 - **In-Place Rename**: Double-click any active tab title or choose `File -> Rename…`.
 - **Follow File (Live Tail)**: Press **`Ctrl+Alt+F`** (or `File -> Follow file`). Anvil continuously polls the file on disk and auto-scrolls to the end—ideal for live application and server logs.
 
@@ -175,9 +197,9 @@ Anvil provides dual-pane workflows to maximize screen real estate on tablets, Ch
 ## 7. Editing, Navigation and Cursor Superpowers
 
 ### Navigation and Cursor Movement
-- **Go to Line**: Press **`Ctrl+G`**, input a line number, and press Enter.
+- **Go to Line**: Press **`Ctrl+G`**, type a line number (or `line:column`, or `+n` / `-n` to move relative to the caret), and press Enter.
 - **Go to Symbol Outline**: Press **`Ctrl+R`** to view a quick outline of functions, classes, markdown headings, and tags in the document.
-- **Matching Brackets**: Press **`Ctrl+]`** to jump between matching `()`, `{}`, and `[]`. Press **`Ctrl+Shift+]`** to select the enclosed block.
+- **Matching Brackets**: Press **`Ctrl+Shift+M`** to jump between matching `()`, `{}`, and `[]`. Press **`Ctrl+Shift+]`** to select the enclosed block.
 - **Word Wrap**: Press **`Alt+Z`** to toggle line wrapping.
 
 ### Multi-Cursor and Column Editing
@@ -223,7 +245,7 @@ Anvil provides continuous multi-line input connections (`InputType.TYPE_CLASS_TE
 - **Font Zoom Gestures**:
   - Hold **`Ctrl`** and roll the mouse scroll wheel or pinch the touchpad to smoothly scale editor text from 70% to 250%.
   - Press **`Ctrl+0`** to reset zoom back to 100%.
-- **Drag and Drop**: Drag files from the Googlebook OS / Android Files app directly onto the editor window to open them in new tabs.
+- **Drag and Drop**: Drag files from the Googlebook OS / Android Files app directly onto the editor window to open them in new tabs. Text dragged onto the editor is inserted where you drop it; text dropped elsewhere in the window opens as a new document. Images and other non-text files are refused.
 
 ---
 
@@ -282,15 +304,18 @@ Located under `Tools` or the Command Palette, Anvil provides zero-dependency tex
 
 Anvil connects directly to local filesystems and remote servers without third-party sync utilities:
 
-- **Local Storage / SAF**: Persistent folder permissions via Android Storage Access Framework.
-- **Direct VM Host Paths**: Direct access to local development paths (e.g., `/storage/emulated/10/Development`).
-- **Root Access**: Direct `/` filesystem access on rooted devices.
-- **SMB (Windows Share / Samba)**: Connect to network shares using SMB2/SMB3 with domain authentication.
-- **SFTP (SSH File Transfer)**: Key-based or password-authenticated SFTP over SSH.
-- **FTP / FTPS**: Standard and TLS-encrypted FTP servers.
-- **WebDAV**: Nextcloud, ownCloud, and Apache WebDAV endpoints.
-- **Google Drive**: Browse, open, and save directly to your Google Drive account.
-- **GitHub Repositories**: Connect directly to public or private repositories via personal access tokens (`gh://owner/repo/<branch>`). Commit and push file updates directly from the editor (`File -> Commit changed files…`).
+Every place you browse is a **location**. Add one from the drawer or `File -> Add a location…`, and rename, reorder or remove them in `File -> Manage locations…`.
+
+- **Device folder**: any folder you grant Anvil access to through the system folder picker. In the full build, **Open folder by path…** also adds a folder by typing its path (e.g., `/storage/emulated/10/Development`).
+- **Network share (SMB)**: an SMB2 or SMB3 share on a PC, Mac or NAS, with optional domain sign-in. SMB1-only servers aren't supported.
+- **SFTP server**: SFTP over SSH, signing in with a password or a private key. You check the server's host key on first connection; **Remove host key** in the location's ⋮ menu clears it if the server is reinstalled.
+- **FTP server**: plain FTP or FTPS (explicit TLS).
+- **WebDAV**: any WebDAV folder, such as Nextcloud, ownCloud, Synology or QNAP.
+- **Google Drive**: browse, open and save directly to your Google Drive account. Use **Sign out** in its ⋮ menu to end access.
+- **GitHub repository**: one branch of a public or private repository, using a personal access token (`gh://owner/repo/<branch>`). Each save is a commit; `File -> Commit changed files…` commits several at once.
+- **Root filesystem** (full build, rooted devices only): the whole `/` filesystem with superuser rights.
+
+Each server location's ⋮ menu offers **Edit connection…**, **Disconnect** (keeps its settings) and **Remove…** (takes it off Locations and deletes its saved password, key or token from this device).
 
 ---
 
@@ -345,7 +370,7 @@ Anvil traverses parent directories for `.editorconfig` files and automatically a
 - `trim_trailing_whitespace` and `insert_final_newline` on save.
 
 ### Custom Keyboard Shortcuts
-In `Settings -> Keyboard`, you can rebind any command:
+In `Settings -> Keyboard shortcuts`, you can rebind any command:
 1. Tap or select the command row.
 2. Press your preferred key combination.
 3. Anvil validates conflicts and rebinds cleanly.
@@ -396,7 +421,14 @@ See `mcp/anvil-docs-mcp/README.md` for complete configuration instructions.
 | **`Ctrl+Shift+K`** | Delete current line | `Lines -> Delete lines` |
 | **`Alt+Up` / `Down`** | Move lines up / down | `Lines -> Move lines up/down` |
 | **`Ctrl+Alt+Up` / `Down`** | Add stacked cursor above / below | `Edit -> Add cursor above/below` |
-| **`Ctrl+]`** | Jump to matching bracket | `Edit -> Jump to bracket` |
+| **`Ctrl+Shift+M`** | Jump to matching bracket | `Edit -> Jump to bracket` |
+| **`Ctrl+/`** | Toggle line comment | `Edit -> Toggle line comment` |
+| **`Ctrl+L`** | Select line (again to extend) | `Edit -> Select line` |
+| **`Ctrl+]`** / **`Ctrl+[`** | Indent / outdent lines | `Lines -> Indent / Outdent lines` |
+| **`Ctrl+Enter`** | Insert line below | `Lines -> Insert line below` |
+| **`Shift+Alt+Down`** | Copy line down | `Lines -> Copy line down` |
+| **`F3`** / **`Shift+F3`** | Find next / previous | `Find -> Find next/previous` |
+| **`Ctrl+Shift+/`** | Keyboard shortcuts sheet | `Help -> Keyboard shortcuts` |
 | **`Ctrl+Shift+]`** | Select enclosed bracket block | `Edit -> Select enclosing block` |
 | **`Ctrl+F2`** | Toggle line bookmark | Gutter / `Edit -> Toggle bookmark` |
 | **`F2`** / **`Shift+F2`** | Next / Previous bookmark | `Edit -> Next/Prev bookmark` |
