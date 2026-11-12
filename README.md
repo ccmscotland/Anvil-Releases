@@ -35,7 +35,7 @@ All versions and historical release notes are available on the [Releases Page](h
 - **Storage and Cloud Providers**:
   - Direct local Linux VM/host development folder paths (`/storage/emulated/10/Development`).
   - Android Storage Access Framework (SAF) with persisted permissions.
-  - Remote sources: SMB, SFTP, FTP/FTPS, WebDAV, Google Drive, and GitHub branches.
+  - Network and cloud: SMB network shares and Google Drive.
 - **Tools and Productivity**:
   - Command Palette (`Ctrl+Shift+P`), Quick Open (`Ctrl+P`), Find and Replace across files (`Ctrl+Shift+F`), Multi-cursor editing, Snippets, Line bookmarks, Markdown live preview (`Ctrl+Shift+\`), and JSON/XML formatting.
 - **Model Context Protocol (MCP)**:
@@ -70,7 +70,7 @@ A complete, in-depth guide covering keyboard navigation, split panes, Googlebook
 
 | Version | Release Date | Key Updates | Download |
 |:---:|:---:|:---|:---:|
-| v1.0.5 | November 2026 | Under the hood: preview pane no longer flashes on tab switch, alert buttons act, session format guarded by a golden-file test against a captured 1.0.4 session, view model split into tested components (ADR-001), Drive setup notes for the release signing key. | [Release APK](https://github.com/ccmscotland/Anvil-Releases/releases/download/v1.0.5/Anvil-release.apk) |
+| v1.0.5 | November 2026 | Under the hood: preview pane no longer flashes on tab switch, alert buttons act, session format guarded by a golden-file test against a captured 1.0.4 session, view model split into tested components. | [Release APK](https://github.com/ccmscotland/Anvil-Releases/releases/download/v1.0.5/Anvil-release.apk) |
 | v1.0.4 | November 2026 | Streamlined location picker: hidden unused/experimental remote options (Advanced, Code Hosting, WebDAV, SFTP, FTP) to focus on local storage, Downloads, Google Drive, and SMB. | [Release APK](https://github.com/ccmscotland/Anvil-Releases/releases/download/v1.0.4/Anvil-release.apk) |
 | v1.0.3 | November 2026 | Interface & navigation overhaul, full accessibility support (focus rings, 48dp targets, contrast), overlay back stack, paginated settings, LGPL compliance relink kit. | [Release APK](https://github.com/ccmscotland/Anvil-Releases/releases/download/v1.0.3/Anvil-release.apk) |
 | v1.0.1 | October 2026 | Maintenance release: bundled in-app quick-start user guide template. | [Release APK](https://github.com/ccmscotland/Anvil-Releases/releases/download/v1.0.1/Anvil-release.apk) |

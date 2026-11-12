@@ -35,12 +35,12 @@ Anvil uses these words the same way everywhere: in menus, dialogs, messages and 
 
 **Places**
 - **Location**: any place the file drawer can browse. Add them with **Add a location** and manage them under **Locations**.
-- **Location kinds**: **Device folder**, **Network share (SMB)**, **FTP server**, **SFTP server**, **WebDAV**, **GitHub repository**, **Google Drive** and **Root filesystem**. Where space is short, such as the status bar or the Recent list, the kind is shortened to *This device*, *SMB*, *FTP* or *FTPS*, *SFTP*, *WebDAV*, *GitHub*, *Google Drive* or *Root*.
+- **Location kinds**: **Device folder**, **Network share (SMB)** and **Google Drive**. Where space is short, such as the status bar or the Recent list, the kind is shortened to *This device*, *SMB* or *Google Drive*.
 - **Document**: a file open in a tab. **Open documents** are the documents in your tabs.
 
 **Verbs**
 - **Disconnect**: close the connection to a server. Its settings and saved sign-in details are kept.
-- **Remove**: take something off a list without destroying it. **Remove** on a location takes it off Locations and deletes any saved password, key or token from this device; files on the server or device are not touched. **Remove key** and **Remove host key** delete a saved key from this device.
+- **Remove**: take something off a list without destroying it. **Remove** on a location takes it off Locations and deletes any saved password or token from this device; files on the server or device are not touched.
 - **Sign out**: Google Drive only. It ends Anvil's access to your Google account.
 - **Delete**: destroy something: a file, folder, workspace, snippet, template or local history version.
 
@@ -59,7 +59,7 @@ Anvil is designed for software developers, system administrators, writers, and t
 1. **Keyboard-First**: Every action, menu, dialog, and panel is fully accessible from physical and external keyboards without requiring touch input.
 2. **Adaptive Layouts**: Rather than stretching a mobile UI or scaling down a desktop UI, Anvil adjusts its chrome, toolbars, and menus based on window dimensions and host environment (Phone, Tablet, Desktop / Samsung DeX / Googlebook OS).
 3. **Data Integrity**: Atomic file saves, external modification detection, conflict resolution diffing, automated session recovery, local history snapshots, and strict memory safety caps (32 MB buffer limits).
-4. **Zero Cloud Lock-in**: Direct local filesystem access, direct Linux VM host paths, and standard protocols (Git, SFTP, SMB, WebDAV, FTP) with no proprietary cloud dependencies.
+4. **Zero Cloud Lock-in**: Direct local filesystem access, direct Linux VM host paths, and standard protocols such as SMB, with no proprietary cloud dependencies.
 
 ---
 
@@ -90,7 +90,7 @@ Anvil is designed for software developers, system administrators, writers, and t
 ### Permissions Overview
 
 - **Storage (Storage Access Framework / All Files)**: Used to open, edit, and persist files across internal storage, SD cards, and development folders (`/storage/emulated/10/Development`).
-- **Internet**: Required for remote network storage (SFTP, SMB, WebDAV, FTP, Google Drive, GitHub), AI assistant queries, and MCP server network connections.
+- **Internet**: Required for network storage (SMB, Google Drive), AI assistant queries, and MCP server network connections.
 - **Microphone / Speech Recognition**: Used for voice typing and Rambler voice dictation fallback.
 
 ---
@@ -138,7 +138,7 @@ Anvil monitors display metrics and system UI modes to present the optimal layout
 
 ### Auto-Save Modes
 Configure auto-save behavior in `Settings -> Files & saving`:
-- **Off** (default): Saves only when you ask. GitHub files and files changed by other apps are never saved automatically.
+- **Off** (default): Saves only when you ask. Files changed by other apps are never saved automatically.
 - **After a pause**: Automatically saves 2 seconds after typing ceases.
 - **On leaving Anvil**: Automatically writes modified buffers when switching to another application.
 
@@ -306,16 +306,11 @@ Anvil connects directly to local filesystems and remote servers without third-pa
 
 Every place you browse is a **location**. Add one from the drawer or `File -> Add a location…`, and rename, reorder or remove them in `File -> Manage locations…`.
 
-- **Device folder**: any folder you grant Anvil access to through the system folder picker. In the full build, **Open folder by path…** also adds a folder by typing its path (e.g., `/storage/emulated/10/Development`).
+- **Device folder**: any folder you grant Anvil access to through the system folder picker.
 - **Network share (SMB)**: an SMB2 or SMB3 share on a PC, Mac or NAS, with optional domain sign-in. SMB1-only servers aren't supported.
-- **SFTP server**: SFTP over SSH, signing in with a password or a private key. You check the server's host key on first connection; **Remove host key** in the location's ⋮ menu clears it if the server is reinstalled.
-- **FTP server**: plain FTP or FTPS (explicit TLS).
-- **WebDAV**: any WebDAV folder, such as Nextcloud, ownCloud, Synology or QNAP.
 - **Google Drive**: browse, open and save directly to your Google Drive account. Use **Sign out** in its ⋮ menu to end access.
-- **GitHub repository**: one branch of a public or private repository, using a personal access token (`gh://owner/repo/<branch>`). Each save is a commit; `File -> Commit changed files…` commits several at once.
-- **Root filesystem** (full build, rooted devices only): the whole `/` filesystem with superuser rights.
 
-Each server location's ⋮ menu offers **Edit connection…**, **Disconnect** (keeps its settings) and **Remove…** (takes it off Locations and deletes its saved password, key or token from this device).
+Each server location's ⋮ menu offers **Edit connection…**, **Disconnect** (keeps its settings) and **Remove…** (takes it off Locations and deletes its saved password or token from this device).
 
 ---
 
@@ -454,7 +449,7 @@ adb shell am start -a android.intent.action.VIEW -d "file:///storage/emulated/10
 ```
 
 ### Q: How do I resolve permission errors when opening local folders?
-**A**: Ensure Anvil has been granted Storage access. For root or terminal development paths, navigate to `File -> Add a location…` and select your local development directory using the system folder picker.
+**A**: Ensure Anvil has been granted Storage access. For development folders, navigate to `File -> Add a location…` and select your local development directory using the system folder picker.
 
 ### Q: Where are unsaved crash snapshots stored?
 **A**: Anvil persists temporary recovery sessions in the application cache. If an abnormal shutdown occurs, Anvil automatically detects the recovery manifest on subsequent startup and offers to restore open buffers.
