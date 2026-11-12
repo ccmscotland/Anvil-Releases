@@ -143,7 +143,11 @@ Configure auto-save behavior in `Settings -> Files & saving`:
 - **On leaving Anvil**: Automatically writes modified buffers when switching to another application.
 
 ### External File Conflict Guard
-If an open file is modified by an external process, Anvil detects the timestamp/size divergence and presents a safety prompt:
+Anvil checks whether a file changed outside Anvil when you reopen it, when you come back to Anvil from another app (for files on this device; network files are checked when reopened or saved), and when you save.
+- **No unsaved edits**: the new version is loaded and Anvil says so.
+- **Unsaved edits**: your edits are kept and Anvil asks what to do. When you reopen or save, it asks straight away; when you come back to Anvil, an alert offers **Review**.
+
+The prompt offers:
 - **Reload from Disk**: Replaces the editor buffer with the external version (unsaved edits are safely archived in Local History).
 - **Overwrite**: Forces the local editor buffer to disk.
 - **Compare**: Opens a side-by-side line diff highlighting differences between buffer and disk.

@@ -10,7 +10,7 @@ Anvil is a high-performance, keyboard-first code and text editor built specifica
 
 ## Download Latest APK
 
-- **[Download Anvil v1.0.5 Release APK (Latest)](https://github.com/ccmscotland/Anvil-Releases/releases/latest/download/Anvil-release.apk)** (signed with RSA-4096 key, optimized)
+- **[Download Anvil v1.0.6 Release APK (Latest)](https://github.com/ccmscotland/Anvil-Releases/releases/latest/download/Anvil-release.apk)** (signed with RSA-4096 key, optimized)
 
 All versions and historical release notes are available on the [Releases Page](https://github.com/ccmscotland/Anvil-Releases/releases).
 
@@ -70,6 +70,7 @@ A complete, in-depth guide covering keyboard navigation, split panes, Googlebook
 
 | Version | Release Date | Key Updates | Download |
 |:---:|:---:|:---|:---:|
+| v1.0.6 | November 2026 | Fresh files: a file changed in another app is re-read when you reopen it or come back to Anvil (unsaved edits are kept and you are asked), and GitHub-style alerts render as coloured callouts in the Markdown preview. | [Release APK](https://github.com/ccmscotland/Anvil-Releases/releases/download/v1.0.6/Anvil-release.apk) |
 | v1.0.5 | November 2026 | Under the hood: preview pane no longer flashes on tab switch, alert buttons act, session format guarded by a golden-file test against a captured 1.0.4 session, view model split into tested components. | [Release APK](https://github.com/ccmscotland/Anvil-Releases/releases/download/v1.0.5/Anvil-release.apk) |
 | v1.0.4 | November 2026 | Streamlined location picker: hidden unused/experimental remote options (Advanced, Code Hosting, WebDAV, SFTP, FTP) to focus on local storage, Downloads, Google Drive, and SMB. | [Release APK](https://github.com/ccmscotland/Anvil-Releases/releases/download/v1.0.4/Anvil-release.apk) |
 | v1.0.3 | November 2026 | Interface & navigation overhaul, full accessibility support (focus rings, 48dp targets, contrast), overlay back stack, paginated settings, LGPL compliance relink kit. | [Release APK](https://github.com/ccmscotland/Anvil-Releases/releases/download/v1.0.3/Anvil-release.apk) |
