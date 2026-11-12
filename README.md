@@ -16,6 +16,22 @@ All versions and historical release notes are available on the [Releases Page](h
 
 ---
 
+## Screenshots
+
+![Desktop layout on a 10-inch tablet: file tree, Markdown source and live preview side by side](screenshots/desktop-live-preview.png)
+
+<p align="center">
+  <img src="screenshots/phone-code-editor.png" width="30%" alt="Phone: Kotlin file with syntax highlighting and open tabs">
+  &nbsp;
+  <img src="screenshots/phone-dark-theme.png" width="30%" alt="Phone: the same file in the Dracula dark theme">
+  &nbsp;
+  <img src="screenshots/phone-markdown-preview.png" width="30%" alt="Phone: rendered Markdown preview with a table">
+</p>
+
+![Desktop layout in the Dracula theme with the outline side panel listing classes and functions](screenshots/desktop-outline-dark.png)
+
+---
+
 ## Highlights and Features
 
 - **Adaptive Desktop Shell**:
